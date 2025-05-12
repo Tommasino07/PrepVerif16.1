@@ -1,0 +1,13 @@
+<h2>FORM DI INSERIMENTO</h2>
+<p>Nome:</p><input name="nome" #nome><br>
+<p>Cognome:</p><input name="cognome" #cognome><br>
+<p>Indirizzo:</p><input name="indirizzo" #indirizzo><br>
+<p>Telefono:</p><input name="telefono" #telefono><br>
+<p>Email:</p><input name="email" #email><br>
+<p>Data Prenotazione:</p><input name="dataprenotazione" #dataprenotazione><br>
+<p>Ora Prenotazione:</p><input name="oraprenotazione" #oraprenotazione><br>
+
+
+<button type="button"(click)="salva">Salva</button>
+<app-lista-prenotazioni [vettPrenotazione]="vettPrenotazioni"></app-lista-prenotazioni>
+
