@@ -43,7 +43,13 @@ export class AppComponent {
   }
 
 
-  salva() {
+  salva(nome: HTMLInputElement, cognome: HTMLInputElement, indirizzo: HTMLInputElement, telefono: HTMLInputElement, email: HTMLInputElement, dataprenotazione: HTMLInputElement, oraprenotazione: HTMLInputElement) : boolean {
+    console.log(nome.value, cognome.value, indirizzo.value, telefono.value, email.value, dataprenotazione.value, oraprenotazione.value)
+    this.vettPrenotazioni.push(new Prenotazione(nome.value, cognome.value, indirizzo.value, telefono.value, email.value, dataprenotazione.value, oraprenotazione.value))
+    
+    
+    return false;
+
   }
 
 }

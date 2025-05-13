@@ -8,6 +8,6 @@
 <p>Ora Prenotazione:</p><input name="oraprenotazione" #oraprenotazione><br>
 
 
-<button type="button"(click)="salva">Salva</button>
+<button type="button"(click)="salva(nome, cognome, indirizzo, telefono, email, dataprenotazione,oraprenotazione)">Salva</button>
 <app-lista-prenotazioni [vettPrenotazione]="vettPrenotazioni"></app-lista-prenotazioni>
 

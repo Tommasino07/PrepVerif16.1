@@ -1,8 +1,8 @@
 @for(prenotazione of vettPrenotazione; track prenotazione)
 {
 <div>
-   <h3>{{prenotazione.nome}}</h3>
-   <b>post {{prenotazione.nome}} di utente #: {{prenotazione.cognome}}</b>
+   <h3>{{prenotazione.nome}} {{prenotazione.cognome}}</h3>
+   <b>Data di prenotazione: {{prenotazione.dataprenotazione}}, ora della prenotazione {{prenotazione.oraprenotazione}}</b>
    <hr>
 </div>
 }
