@@ -18,6 +18,8 @@ export class AppComponent {
   http: HttpClient;
   o!: Observable<Prenotazione[]>;
   loading: boolean  = false;
+  oPost!: Observable<any>;
+  postData : any;
  
   constructor(http: HttpClient) {
     this.http = http;
@@ -45,11 +47,29 @@ export class AppComponent {
 
   salva(nome: HTMLInputElement, cognome: HTMLInputElement, indirizzo: HTMLInputElement, telefono: HTMLInputElement, email: HTMLInputElement, dataprenotazione: HTMLInputElement, oraprenotazione: HTMLInputElement) : boolean {
     console.log(nome.value, cognome.value, indirizzo.value, telefono.value, email.value, dataprenotazione.value, oraprenotazione.value)
-    this.vettPrenotazioni.push(new Prenotazione(nome.value, cognome.value, indirizzo.value, telefono.value, email.value, dataprenotazione.value, oraprenotazione.value))
-    
+    let prenotazione= new Prenotazione(nome.value, cognome.value, indirizzo.value, telefono.value, email.value, dataprenotazione.value, oraprenotazione.value);
+    this.vettPrenotazioni.push(prenotazione)
+    this.makePost(prenotazione);
     
     return false;
 
+  }
+  makePost(prenotazione : Prenotazione): void {
+    // Definisco i dati da spedire
+    let dataToSend = JSON.stringify(prenotazione);
+
+    this.loading = true;
+
+    //Faccio la richiesta post
+    this.oPost = this.http.post('https://my-json-server.typicode.com/malizia-g/verificaPrenotazioni/prenotazioni', dataToSend)
+    this.oPost.subscribe(this.getPostResponse);
+  }
+
+  getPostResponse = (data : Object) => {
+    this.postData = data;
+    this.loading = false;
+
+    console.log(data);
   }
 
 }
