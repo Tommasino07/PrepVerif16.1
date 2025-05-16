@@ -1,0 +1,12 @@
+<div>
+   <h3>{{prenotazione.nome}} {{prenotazione.cognome}}</h3>
+   <b>Data di prenotazione: {{prenotazione.data}}, ora della prenotazione {{prenotazione.ora}}</b>
+   <hr>
+   <button type="button" (click)="estendi()">ESTENDI</button>
+</div>
+
+
+@if(tette)
+{
+   {{prenotazione | json}}
+}

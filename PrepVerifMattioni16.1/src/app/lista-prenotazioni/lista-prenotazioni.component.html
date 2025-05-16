@@ -1,8 +1,5 @@
 @for(prenotazione of vettPrenotazione; track prenotazione)
 {
-<div>
-   <h3>{{prenotazione.nome}} {{prenotazione.cognome}}</h3>
-   <b>Data di prenotazione: {{prenotazione.dataprenotazione}}, ora della prenotazione {{prenotazione.oraprenotazione}}</b>
-   <hr>
-</div>
+   <app-dettagli-prenotazione [prenotazione]="prenotazione"></app-dettagli-prenotazione>
 }
+

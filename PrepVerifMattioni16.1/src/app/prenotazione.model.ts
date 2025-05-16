@@ -5,8 +5,8 @@ export class Prenotazione{
         public indirizzo:string,
         public telefono:string,
         public email:string,
-        public dataprenotazione:string,
-        public oraprenotazione:string){
+        public data:string,
+        public ora:string){
 
     }
 
